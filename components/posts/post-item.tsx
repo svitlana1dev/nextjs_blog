@@ -11,7 +11,7 @@ type Props = {
 function PostItem(props: Props) {
   const { title, image, excerpt, date, slug } = props.post;
 
-  const formattedDate = new Date(date).toLocaleDateString("en-US", {
+  const formattedDate = new Date(date!).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -26,7 +26,7 @@ function PostItem(props: Props) {
         <div className={classes.image}>
           <Image
             src={imagePath}
-            alt={title}
+            alt={title!}
             width={300}
             height={200}
             layout="responsive"
